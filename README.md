@@ -2,7 +2,7 @@
 
 > Machine Learning pipeline for short-term equity return forecasting (21-day horizon) across a 43-ticker universe (2013–2025), with binary and multi-class classification, model calibration, SHAP interpretability, and financial backtesting against a Buy & Hold benchmark.
 
-Academic project — Corso di Machine Learning, Laurea Magistrale in Finanza.
+Academic Project — Machine Learning Course | M.Sc. in Financial Institutions, International Finance and Risk Management | Sapienza University of Rome
 
 ---
 
@@ -32,7 +32,7 @@ The core methodological commitments of the project are:
 └── README.md
 ```
 
-> **Note:** `dataset_train.csv` and `dataset_test.csv` are the *only* link between the two notebooks. If you already have these two files, you can skip Step 1 entirely and jump straight into `ml_pipeline.ipynb`.
+> **Note:** `dataset_train.csv` and `dataset_test.csv` are the *only* link between the two notebooks. If you have already uploaded these two files, you can skip Step 1 entirely and jump straight into `ml_pipeline.ipynb`.
 
 ---
 
@@ -96,29 +96,42 @@ Total runtime: roughly 10–15 minutes on a standard machine (no GPU required).
 
 ## 🧠 Models & Results
 
-*(Draft section — to be completed with final charts, screenshots, and numbers)*
-
 ### Models compared
 
-| Model | Family | Feature set | Role |
-|---|---|---|---|
-| Random Forest | Bagging | Full (44) | Conservative baseline / defensive profile |
-| XGBoost-Full | Boosting | Full (44) | Balanced profile |
-| XGBoost-Reduced | Boosting | Reduced (~28, XGBoost-native selection) | Aggressive / parsimonious profile |
-
+| Model | Family | Feature set |
+|---|---|---|
+| Random Forest | Bagging | Full (44) |
+| XGBoost-Full | Boosting | Full (44) |
+| XGBoost-Reduced | Boosting | Reduced (~28, XGBoost-native selection) |
 ### Classification performance (test set, 2024–2025)
 
-*[Insert final metrics table here: Accuracy, Precision, Recall, F1, ROC-AUC for binary; Accuracy, F1-macro, Cohen's Kappa for multi-class]*
+<img width="1501" height="1107" alt="image" src="https://github.com/user-attachments/assets/1e552a0d-7796-44f8-8319-f8c27efb842b" />
 
-*[Insert SHAP summary plot / top feature drivers screenshot here]*
+<img width="1674" height="1127" alt="image" src="https://github.com/user-attachments/assets/b6b9b208-078a-4bf8-bc36-a976b383db1a" />
+
+
+<img width="1786" height="788" alt="image" src="https://github.com/user-attachments/assets/2c45e130-15c7-4f20-9b71-2e83128b3c95" />
+
+
+<img width="768" height="940" alt="image" src="https://github.com/user-attachments/assets/362bdd04-7d2d-480a-af97-1d5d6ece7df2" />
+
 
 ### Financial backtest (test set, 2024–2025)
 
-*[Insert final results table here: Total Return, CAGR, Sharpe Ratio, Max Drawdown, Calmar Ratio for each strategy vs. Buy & Hold]*
+<img width="1612" height="1281" alt="image" src="https://github.com/user-attachments/assets/7d0da6f7-875c-449d-985f-a6fe0611436f" />
 
-*[Insert equity curves chart here]*
+<img width="1679" height="1281" alt="image" src="https://github.com/user-attachments/assets/de7f57e3-c228-4166-9d8d-ac7f7792f9df" />
 
-**Key takeaway:** *[Summarize here whether/which model(s) beat the Buy & Hold benchmark, and on which metric — total return, Sharpe, or drawdown control]*
+
+| Strategy | Total Return | CAGR | Volatility | Sharpe | Max DD | Calmar | Win Rate | N. Trades |
+|---|---|---|---|---|---|---|---|---|
+| Buy & Hold | 0.4430 | 0.2071 | 0.2149 | 0.9826 | -0.2252 | 0.9196 | 0.5580 | 43 |
+| RF (binary) | -0.1494 | -0.0797 | 0.1028 | -0.7550 | -0.1894 | -0.4207 | 0.4375 | 6 |
+| XGBoost-44 (binary) | 0.3570 | 0.1696 | 0.2059 | 0.8639 | -0.2049 | 0.8279 | 0.5507 | 738 |
+| XGBoost-Reduced (binary) | 0.3762 | 0.1781 | 0.2223 | 0.8477 | -0.2274 | 0.7832 | 0.5340 | 823 |
+| RF (multi LS) | 0.2841 | 0.1369 | 0.2603 | 0.6232 | -0.3135 | 0.4367 | 0.5193 | 427 |
+| XGBoost-44 (multi LS) | 0.6225 | 0.2819 | 0.3612 | 0.8558 | -0.2393 | 1.1781 | 0.5316 | 597 |
+| XGBoost-Reduced (multi LS) | 0.0204 | 0.0104 | 0.2958 | 0.1820 | -0.3123 | 0.0334 | 0.5084 | 598 |
 
 ---
 
@@ -143,4 +156,4 @@ This project is for academic and educational purposes only. It does not constitu
 *Michele Somma*
 https://www.linkedin.com/in/michele-somma/
 
-Project developed for the course "AI in Banking and Finance" — Laurea Magistrale.
+Project developed for the "Machine Learning" Course, M.Sc. in Financial Institutions, International Finance and Risk Management | Sapienza University of Rome.
